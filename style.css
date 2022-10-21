@@ -1,0 +1,129 @@
+:root{
+    --bandintBorderSize:0.7vmin;
+}
+body {
+    position: absolute;
+    z-index: 50;
+    font-family: 'Bitter', serif;
+    font-size: 5vmin;
+}
+
+.bg {
+    filter: blur(1px);
+    background-image: url('casino.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+
+    overflow-x: hidden;
+}
+
+.flexContainer {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container::before {
+    display: block;
+    box-sizing: content-box;
+    content: "s";
+    position: absolute;
+    z-index: 199;
+    width: 100%;
+    height: 100%;
+    background-color: wheat;
+    filter: opacity(0.8) brightness(150%) blur(5vmax);
+    box-shadow: 0 0 15vmax 15px white;
+}
+
+.container {
+    box-sizing: content-box;
+    width: 65vmin;
+    height: 65vmin;
+    padding: 10vmin;
+    border-radius: 15%;
+    background-color: rgba(203, 203, 203, 0.683);
+    z-index: 200;
+    position: relative;
+    text-align: center;
+    display: grid;
+    grid-template-rows: 1fr 1fr 2fr;
+}
+.container >*:nth-child(n){
+    display:grid;
+    position: relative;
+    z-index: 201;
+    margin: auto 0;
+    height: auto;
+}
+.counterContainer>*:nth-child(n) {
+    display: inline-block;
+    position: relative;
+    z-index: 201;
+}
+.counterContainer{
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    border-top: 5px double #FBBC16;
+    border-bottom: 5px double #FBBC16;
+}
+#currTry{
+    margin-bottom: 0;
+    border-right: 5px double #FBBC16;
+}
+
+.banditBox{
+    position: relative;
+    z-index: 201;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    background-color: rgb(244, 232, 135);
+    transition: 0.5s;
+    box-shadow: 0 0 5px aqua, 0 0 20px aqua;
+}
+.banditBox > *:nth-child(n){
+    display: table-cell;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 201;
+    
+}
+.banditBox > div:first-child{
+    border:var(--bandintBorderSize)  solid rgb(201, 201, 201);
+}
+.banditBox > div:last-child{
+    border:var(--bandintBorderSize) solid rgb(201, 201, 201);
+}
+.banditBox > .banditCol2{
+    border-top:var(--bandintBorderSize) solid rgb(201, 201, 201);
+    border-bottom:var(--bandintBorderSize) solid rgb(201, 201, 201);
+}
+button{
+    border: 5px ridge rgba(212, 214, 212, 0.749);
+    width:fit-content;
+    height: min-content;
+    margin: 3vmin auto;
+    background-color: #ffcd00;
+}
+img{
+    box-sizing: border-box;
+    margin:1vmin;
+    height:11vmin;
+    width:11vmin;
+}
+h2{
+    box-sizing: content-box;
+    display: table-cell;
+    padding-top: 0.5vmin;
+}
+
